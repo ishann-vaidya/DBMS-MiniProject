@@ -1,5 +1,5 @@
 
-# ✈ Airline Reservation System
+# Airline Reservation System
 
 The **Airline Reservation System** is a database-driven web application designed to automate and streamline airline ticket booking, flight management, and passenger information handling. It is built using **Python (Flask)** for the backend and **MySQL** as the relational database system, with HTML/CSS for the frontend interface.
 
