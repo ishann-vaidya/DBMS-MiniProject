@@ -1,9 +1,9 @@
 
-# ✈️ Airline Reservation System
+# ✈ Airline Reservation System
 
 The **Airline Reservation System** is a database-driven web application designed to automate and streamline airline ticket booking, flight management, and passenger information handling. It is built using **Python (Flask)** for the backend and **MySQL** as the relational database system, with HTML/CSS for the frontend interface.
 
-## 🔍 Features
+## Features
 
 - **Passenger Module**
   - User registration and login
@@ -20,14 +20,14 @@ The **Airline Reservation System** is a database-driven web application designed
   - Secure login
   - Access to relevant flight assignment information
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: HTML, CSS
 - **Backend**: Python with Flask
 - **Database**: MySQL
 - **Tools**: MySQL Workbench, VS Code
 
-## 🗃️ Database Design
+## Database Design
 
 The system uses a normalized relational schema with the following key entities:
 - `Airline`
@@ -41,14 +41,14 @@ The system uses a normalized relational schema with the following key entities:
 
 ER diagrams, schema definitions, and SQL table creation scripts are provided in the source files.
 
-## 🚫 Limitations
+## Limitations
 
 - No real-time payment gateway integration
 - No dynamic seat selection or live seat map
 - Single-user access (no concurrent multi-user control)
 - Basic security (data encryption not implemented)
 
-## 🚀 Future Enhancements
+## Future Enhancements
 
 - Secure payment integration (e.g. Razorpay, Stripe)
 - Multi-user concurrency and session handling
@@ -56,7 +56,7 @@ ER diagrams, schema definitions, and SQL table creation scripts are provided in 
 - Passenger loyalty program
 - Analytics and visualization dashboards
 
-## 📁 Project Structure
+## Project Structure
 
 ```
 ├── app.py                  # Flask backend
@@ -66,7 +66,7 @@ ER diagrams, schema definitions, and SQL table creation scripts are provided in 
 └── README.md
 ```
 
-## ✅ How to Run
+## How to Run
 
 1. Clone the repository:
    ```
