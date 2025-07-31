@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Display Crew Info - SkyWay Airlines</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>SkyWay Airlines</h1>
+                <p>Reservation System</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="{{ url_for('index') }}">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="admin-section">
+                <h2>Crew Information</h2>
+                <div class="admin-controls">
+                    <input type="text" placeholder="Search by name or ID" class="search-input">
+                    <button class="btn">Search</button>
+                </div>
+
+                <div class="table-container">
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Crew ID</th>
+                                <th>Name</th>
+                                <th>Role</th>
+                                <th>Salary</th>
+                                <th>Airline ID</th>
+                                <th>Actions</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {% for crew in crew_data %}
+                            <tr>
+                                <td>{{ crew.crew_id }}</td>
+                                <td>{{ crew.name }}</td>
+                                <td>{{ crew.role }}</td>
+                                <td>${{ crew.salary }}</td>
+                                <td>{{ crew.airline_id }}</td>
+                                <td>
+                                    <a href="{{ url_for('edit_crew', crew_id=crew.crew_id) }}" class="btn btn-small">Edit</a>
+                                    <form action="{{ url_for('delete_crew', crew_id=crew.crew_id) }}" method="POST" style="display:inline;">
+                                        <button class="btn btn-small btn-danger" onclick="return confirm('Are you sure?')">Delete</button>
+                                    </form>
+                                </td>
+                            </tr>
+                            {% endfor %}
+                        </tbody>
+                    </table>
+                </div>
+
+                <div class="pagination">
+                    <button class="btn btn-small">Previous</button>
+                    <span>Page 1</span>
+                    <button class="btn btn-small">Next</button>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 SkyWay Airlines. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

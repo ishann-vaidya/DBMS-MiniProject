@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Crew - SkyWay Airlines</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>SkyWay Airlines</h1>
+                <p>Reservation System</p>
+            </div>
+        </header>
+
+        <main>
+            <section class="form-container">
+                <h2>Edit Crew Member</h2>
+                <form action="/edit_crew" method="POST">
+                    <div class="form-group">
+                        <label for="crew_id">Crew ID</label>
+                        <input type="text" id="crew_id" name="crew_id" value="{{ crew['crew_id'] }}" readonly>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" value="{{ crew['name'] }}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="role">Role</label>
+                        <select id="role" name="role" required>
+                            <option value="">Select Role</option>
+                            <option value="pilot" {% if crew['role'] == 'pilot' %}selected{% endif %}>Pilot</option>
+                            <option value="co-pilot" {% if crew['role'] == 'co-pilot' %}selected{% endif %}>Co-Pilot</option>
+                            <option value="flight-attendant" {% if crew['role'] == 'flight-attendant' %}selected{% endif %}>Flight Attendant</option>
+                            <option value="ground-staff" {% if crew['role'] == 'ground-staff' %}selected{% endif %}>Ground Staff</option>
+                            <option value="engineer" {% if crew['role'] == 'engineer' %}selected{% endif %}>Engineer</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="salary">Salary</label>
+                        <input type="number" id="salary" name="salary" min="0" value="{{ crew['salary'] }}" required>
+                    </div>
+                    <button type="submit" class="btn btn-submit">Update Crew</button>
+                </form>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 SkyWay Airlines. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SkyWay Airlines - Reservation System</title>
+    <link rel="stylesheet" href="static/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1>SkyWay Airlines</h1>
+                <p>Reservation System</p>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="templates/index.html">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <section class="hero">
+                <h2>Welcome to SkyWay Airlines Reservation System</h2>
+                <p>Please select your login type below</p>
+            </section>
+
+            <section class="login-options">
+                <div class="card">
+                    <h3>Passenger Login</h3>
+                    <p>For booking tickets and managing your travel</p>
+                    <a href="/passenger" class="btn">Login as Passenger</a>
+                </div>
+
+                <div class="card">
+                    <h3>Crew Login</h3>
+                    <p>For airline staff and crew members</p>
+                    <a href="/crew" class="btn">Login as Crew</a>
+                </div>
+
+                <div class="card admin-card">
+                    <h3>Administrator</h3>
+                    <p>Airline administration and management</p>
+                    <button id="adminBtn" class="btn">Administrator Options</button>
+                    
+                    <div id="adminOptions" class="admin-options">
+                        <a href="/display_crew" class="admin-link">Display Crew Info</a>
+                        <a href="/ticket" class="admin-link">Enter Ticket Info</a>
+                        <a href="/flight" class="admin-link">Enter Flight Info</a>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 SkyWay Airlines. All rights reserved.</p>
+        </footer>
+    </div>
+
+    <script>
+        document.getElementById('adminBtn').addEventListener('click', function() {
+            const adminOptions = document.getElementById('adminOptions');
+            if (adminOptions.style.display === 'flex') {
+                adminOptions.style.display = 'none';
+            } else {
+                adminOptions.style.display = 'flex';
+            }
+        });
+    </script>
+</body>
+</html>
